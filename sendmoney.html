@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet - Enviar Dinero</title>
+
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Título -->
+    <div class="container bg-color p-4 border shadow mt-4 wallet-box">
+        <h2 class="center titulo-seccion">Enviar Dinero</h2>
+    </div>
+
+    <!-- Contactos -->
+    <div class="container bg-color p-4 border shadow mt-4 wallet-box">
+
+        <h2 class="center titulo-seccion mb-4">Contactos</h2>
+
+        <div id="send-alert-container"></div>
+
+        <!-- Nuevo contacto -->
+        <h5 class="subtitulo-seccion">Nuevo contacto</h5>
+
+        <button id="btnShowContactForm" class="btn btn-color btn-block mb-3">
+            Agregar nuevo contacto
+        </button>
+
+        <!-- Formulario nuevo contacto -->
+        <div id="newContactFormContainer" style="display: none;">
+
+            <h5 class="subtitulo-seccion mt-3">Agregar nuevo contacto</h5>
+
+            <form id="newContactForm">
+
+                <div class="form-group">
+                    <input type="text" id="contactName" class="form-control" placeholder="Ingrese el nombre">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="contactAccount" class="form-control" placeholder="Ingrese el número de cuenta">
+                    <small id="accountFeedback" class="form-text mensaje-validacion" style="display: none;">El número de cuenta debe contener solo números.</small>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="contactAlias" class="form-control" placeholder="Ingrese el alias">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="contactBank" class="form-control" placeholder="Ingrese el banco">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-12 mb-2">
+                        <button type="submit" class="btn btn-color btn-block">
+                            Guardar
+                        </button>
+                    </div>
+
+                    <div class="col-md-6 col-12 mb-2">
+                        <button type="button" id="btnCancelContact" class="btn btn-secondary btn-block">
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <hr>
+
+        <!-- Buscar contacto -->
+        <h5 class="subtitulo-seccion">Buscar contacto</h5>
+
+        <form id="searchForm">
+            <div class="row">
+                <div class="col-md-9 col-12 mb-2">
+                    <input
+                        type="text"
+                        id="searchContact"
+                        class="form-control"
+                        placeholder="Ingrese el nombre o alias del contacto">
+                </div>
+
+                <div class="col-md-3 col-12 mb-2">
+                    <button type="button" id="btnLimpiarBusqueda" class="btn btn-color btn-block">
+                        Limpiar
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Contactos actuales -->
+        <h2 class="center titulo-seccion mt-4 mb-3">Contactos actuales</h2>
+
+        <ul id="contactList" class="list-group"></ul>
+
+    </div>
+
+    <!-- Monto a transferir -->
+    <div class="container bg-color p-4 border shadow mt-4 wallet-box">
+
+        <h2 class="center titulo-seccion mb-4">Monto a transferir</h2>
+
+        <p id="selectedContactText" class="contacto-seleccionado" style="display: none;"></p>
+
+        <div class="row align-items-center">
+            <div class="col-md-5 col-12 mb-2">
+                <label for="amountToSend" class="label-form">Monto a transferir</label>
+            </div>
+
+            <div class="col-md-7 col-12 mb-2">
+                <input
+                    type="number"
+                    id="amountToSend"
+                    class="form-control"
+                    placeholder="Ingrese el monto"
+                    min="1">
+            </div>
+        </div>
+
+        <div id="confirmationMessage" class="mt-3"></div>
+
+        <div class="row mt-3">
+            <div class="col-md-6 col-12 mb-2">
+                <button id="btnSendMoney" class="btn btn-color btn-block" style="display: none;">
+                    Enviar Dinero
+                </button>
+            </div>
+
+            <div class="col-md-6 col-12 mb-2">
+                <button id="btnVolverMenuSend" class="btn btn-color btn-block">
+                    Volver al Menú Principal
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal de mensajes de transferencia -->
+    <div class="modal fade" id="modalTransferencia" tabindex="-1" role="dialog" aria-labelledby="modalTransferenciaTitulo" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-wallet" id="modalTransferenciaContenido">
+
+                <div class="modal-header border-0 justify-content-center">
+                    <h5 class="modal-title" id="modalTransferenciaTitulo">Mensaje</h5>
+                </div>
+
+                <div class="modal-body text-center">
+                    <p id="modalTransferenciaMensaje" class="mb-2"></p>
+                    <small id="modalTransferenciaExtra"></small>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Popper Bootstrap 4 -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Bootstrap 4 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- JS propio -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

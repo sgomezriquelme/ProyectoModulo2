@@ -1,0 +1,230 @@
+body {
+    background-color: rgb(7, 0, 36);
+    margin: 0;
+    padding: 20px;
+}
+
+/* Caja principal */
+.container.bg-color {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: rgb(174, 154, 255);
+    border-radius: 8px;
+}
+
+/* Títulos y textos */
+h1,
+h2,
+h3,
+h4,
+h5,
+label,
+p {
+    color: rgb(25, 25, 25);
+}
+
+h2.center,
+.center {
+    text-align: center;
+}
+
+.titulo-seccion {
+    text-align: center;
+    font-weight: bold;
+}
+
+.subtitulo-seccion {
+    font-weight: bold;
+}
+
+/* Botón personalizado */
+.btn-color {
+    background-color: rgb(21, 0, 116);
+    color: white;
+    border-color: rgb(38, 153, 206);
+}
+
+.btn-color:hover {
+    background-color: rgb(72, 83, 177);
+    color: white;
+    border-color: rgb(100, 206, 255);
+}
+
+/* Inputs */
+.form-control {
+    border-radius: 5px;
+}
+
+.input-error {
+    border: 2px solid rgb(180, 0, 70);
+}
+
+/* Cajas */
+.wallet-box {
+    border: 1px solid rgb(220, 220, 220) !important;
+}
+
+/* Alertas */
+.alert {
+    margin-top: 15px;
+}
+
+.alerta-redireccion {
+    background-color: rgb(214, 245, 222);
+    color: rgb(0, 75, 35);
+    border: none;
+    border-left: 6px solid rgb(0, 150, 80);
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* Modal depósito */
+.modal-deposito {
+    background-color: rgb(214, 245, 222);
+    color: rgb(0, 75, 35);
+    border-left: 6px solid rgb(0, 150, 80);
+    border-radius: 10px;
+}
+
+.modal-deposito .modal-header {
+    border-bottom: none;
+    justify-content: center;
+}
+
+.modal-deposito .modal-title {
+    color: rgb(0, 75, 35);
+    font-weight: bold;
+}
+
+.modal-deposito .modal-body p,
+.modal-deposito .modal-body small {
+    color: rgb(0, 75, 35);
+}
+
+/* Modal transferencia */
+.modal-wallet {
+    border-radius: 10px;
+    border-left: 6px solid rgb(0, 150, 80);
+    background-color: rgb(214, 245, 222);
+    color: rgb(0, 75, 35);
+}
+
+.modal-wallet .modal-title,
+.modal-wallet .modal-body p,
+.modal-wallet .modal-body small {
+    color: rgb(0, 75, 35);
+}
+
+.modal-wallet-error {
+    border-left: 6px solid rgb(180, 0, 70) !important;
+    background-color: rgb(255, 224, 235) !important;
+    color: rgb(120, 0, 45) !important;
+}
+
+.modal-wallet-error .modal-title,
+.modal-wallet-error .modal-body p,
+.modal-wallet-error .modal-body small {
+    color: rgb(120, 0, 45) !important;
+}
+
+/* Contactos */
+.contacto-item {
+    cursor: pointer;
+    padding: 12px 15px;
+}
+
+.contacto-contenido {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.contact-info {
+    width: 100%;
+}
+
+.contact-name {
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-details {
+    font-size: 14px;
+    color: rgb(80, 80, 80);
+}
+
+/* Contacto seleccionado */
+.contacto-activo {
+    background-color: rgb(235, 226, 255) !important;
+    border-left: 6px solid rgb(21, 0, 116) !important;
+    color: rgb(20, 10, 60) !important;
+}
+
+.contacto-activo .contact-name {
+    color: rgb(21, 0, 116);
+}
+
+.contacto-activo .contact-details {
+    color: rgb(55, 45, 90);
+}
+
+.contacto-seleccionado {
+    background-color: rgb(235, 226, 255);
+    color: rgb(21, 0, 116);
+    padding: 10px;
+    border-left: 6px solid rgb(21, 0, 116);
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* Validación */
+.mensaje-validacion {
+    color: rgb(120, 0, 45);
+    background-color: rgb(255, 224, 235);
+    padding: 6px 10px;
+    border-radius: 5px;
+    margin-top: 6px;
+    font-weight: 500;
+}
+
+/* Mensaje transferencia */
+.alerta-envio {
+    background-color: rgb(214, 245, 222);
+    color: rgb(0, 75, 35);
+    border: none;
+    border-left: 6px solid rgb(0, 150, 80);
+    border-radius: 8px;
+}
+
+.alerta-envio h5,
+.alerta-envio p {
+    color: rgb(0, 75, 35);
+}
+
+/* Movimientos */
+.movimiento-item {
+    padding: 14px 16px;
+}
+
+.movimiento-titulo {
+    font-weight: bold;
+    font-size: 16px;
+    color: rgb(20, 10, 60);
+}
+
+.movimiento-detalle {
+    font-size: 14px;
+    color: rgb(80, 80, 80);
+}
+
+.monto-positivo {
+    color: rgb(0, 120, 60);
+    font-weight: bold;
+}
+
+.monto-negativo {
+    color: rgb(170, 0, 60);
+    font-weight: bold;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet - Últimos Movimientos</title>
+
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Título -->
+    <div class="container bg-color p-4 border shadow mt-4 wallet-box">
+        <h2 class="center titulo-seccion">Últimos Movimientos</h2>
+    </div>
+
+    <!-- Movimientos -->
+    <div class="container bg-color p-4 border shadow mt-4 wallet-box">
+
+        <h5 class="subtitulo-seccion mb-3">Filtrar movimientos</h5>
+
+        <form id="filterForm">
+            <div class="form-group">
+                <label for="filterType" class="label-form">Tipo de movimiento:</label>
+
+                <select id="filterType" class="form-control">
+                    <option value="todos">Todos</option>
+                    <option value="compra">Compra</option>
+                    <option value="deposito">Depósito</option>
+                    <option value="transferencia_recibida">Transferencia recibida</option>
+                    <option value="transferencia_enviada">Transferencia enviada</option>
+                </select>
+            </div>
+        </form>
+
+        <hr>
+
+        <h2 class="center titulo-seccion mt-4 mb-4">Listado de movimientos</h2>
+
+        <!-- Lista generada dinámicamente con jQuery -->
+        <ul id="transactionsList" class="list-group"></ul>
+
+        <button id="btnVolverMenuTransactions" class="btn btn-color btn-block mt-4">
+            Volver al Menú Principal
+        </button>
+
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Popper Bootstrap 4 -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Bootstrap 4 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- JS propio -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
